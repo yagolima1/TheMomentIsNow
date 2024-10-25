@@ -1,5 +1,5 @@
 # Base de Dados - Momento
-Este repositório contém a base de dados de funcionários e produtos da empresa Momento. A atividade visa treinar consultas complexas no MongoDB com foco em análise exploratória de dados.
+Este repositório contém a base de dados de funcionários e produtos da empresa Momento. A atividade visa treinar consultas complexas no MySQL com foco em análise exploratória de dados.
 
 ## Exercícios
 
