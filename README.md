@@ -18,7 +18,12 @@ INSERT INTO funcionarios(funcionario_id,primeiro_nome,sobrenome,email,senha,tele
 ---
 
 ### 3. Quantos funcionários temos ao total na empresa?
-**Resposta**:  
+**Resposta**: São 42 Funcionários ao todo.  
+
+Q:
+```sql
+SELECT COUNT(*) FROM momento.funcionarios;
+```
 
 ---
 
