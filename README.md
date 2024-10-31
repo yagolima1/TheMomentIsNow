@@ -129,12 +129,22 @@ INNER JOIN dependentes ON funcionarios.funcionario_id = dependentes.funcionario_
 ---
 
 ### 10) Qual o funcionário contratado há mais tempo na empresa?
-**Resposta**:  
+**Resposta**: O Steven Wayne, desde 1987
+
+Q:
+```sql
+SELECT CONCAT(primeiro_nome, " ", sobrenome) AS nome_funcionario, data_contratacao FROM momento.funcionarios ORDER BY data_contratacao;
+```
 
 ---
 
 ### 11) Qual o funcionário contratado há menos tempo na empresa?
-**Resposta**:  
+**Resposta**: O Guga, que foi contratado hoje, dia 31/10 de 2024
+
+Q:
+```sql
+SELECT CONCAT(primeiro_nome, " ", sobrenome) AS nome_funcionario, data_contratacao FROM momento.funcionarios ORDER BY data_contratacao DESC;
+```
 
 ---
 
