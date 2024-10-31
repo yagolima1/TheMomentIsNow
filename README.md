@@ -10,6 +10,11 @@ Este repositório contém a base de dados de funcionários e produtos da empresa
 
 ### 2. Inclua suas próprias informações no departamento de Tecnologia da empresa.
 
+Q:
+```sql
+INSERT INTO funcionarios(funcionario_id,primeiro_nome,sobrenome,email,senha,telefone,data_contratacao,cargo_id,salario,gerente_id,departamento_id) VALUES (208,'Yago','Gonçalves','franyagoy@gmail.com','yagoat30#@','2054-3750','2024-10-31',20,30.000,NULL,6);
+```
+
 ---
 
 ### 3. Quantos funcionários temos ao total na empresa?
