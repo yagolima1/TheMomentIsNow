@@ -23,7 +23,7 @@ SELECT COUNT(*) FROM momento.funcionarios;
 ---
 
 ### 3) Quantos funcionários trabalham no Departamento de Tecnologia?
-**Resposta**: 6 Funcionários trabalham no Departamento de Tecnologia
+**Resposta**: 6 Funcionários trabalham no Departamento de Tecnologia.
 
 Q:
 ```sql
@@ -35,7 +35,7 @@ SELECT COUNT(*) FROM momento.funcionarios WHERE departamento_id = 6;
 ## Departamento de Vendas
 
 ### 4) Quantos funcionários trabalham no Departamento de Vendas?
-**Resposta**: 5 Funcionários trabalham no Departamento de Vendas
+**Resposta**: 5 Funcionários trabalham no Departamento de Vendas.
 
 Q:
 ```sql
@@ -67,7 +67,7 @@ SELECT SUM(salario) FROM momento.funcionarios WHERE departamento_id = 8;
 ---
 
 ### 7) Quais são os produtos mais vendidos e quais têm pouca ou nenhuma saída?
-**Resposta**: Os produtos mais vendidos foram o Uniforme do Superman e o Capacete do Homem Formiga, e os com poucas saídas foram o Laço da Honestidade e os Batarangues Oficiais 
+**Resposta**: Os produtos mais vendidos foram o Uniforme do Superman e o Capacete do Homem Formiga, e os com poucas saídas foram o Laço da Honestidade e os Batarangues Oficiais.
 
 Q:
 ```sql
@@ -118,7 +118,13 @@ INSERT INTO funcionarios(funcionario_id,primeiro_nome,sobrenome,email,senha,tele
 ## Funcionários
 
 ### 9) Quantos funcionários da empresa Momento possuem conjuges?
-**Resposta**:  
+**Resposta**: 37 funcionários possuem conjuges.
+
+Q:
+```sql
+SELECT COUNT(*) FROM momento.funcionarios
+INNER JOIN dependentes ON funcionarios.funcionario_id = dependentes.funcionario_id
+```
 
 ---
 
