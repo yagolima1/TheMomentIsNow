@@ -67,12 +67,24 @@ SELECT SUM(salario) FROM momento.funcionarios WHERE departamento_id = 8;
 ---
 
 ### 7) Quais são os produtos mais vendidos e quais têm pouca ou nenhuma saída?
-**Resposta**:  
+**Resposta**: Os produtos mais vendidos foram o Uniforme do Superman e o Capacete do Homem Formiga, e os com poucas saídas foram o Laço da Honestidade e os Batarangues Oficiais 
+
+Q:
+```sql
+SELECT produto_nome,quantidade FROM momento.vendas
+INNER JOIN produtos ON produtos.produto_id = vendas.produto_id
+ORDER BY quantidade DESC;
+```
 
 ---
 
 ### 8) Qual é o produto mais caro no inventário da empresa?
-**Resposta**:  
+**Resposta**: É o Sabre de Luz do Mace Windu, custando R$990,29
+
+Q:
+```sql
+SELECT * FROM momento.produtos ORDER BY produto_price DESC;
+```
 
 ---
 
