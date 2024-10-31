@@ -93,13 +93,25 @@ SELECT * FROM momento.produtos ORDER BY produto_price DESC;
 * **Um novo departamento foi criado. O departamento de Inovações.** 
 Ele será locado no Brasil. Por favor, adicione-o no banco de dados da empresa colocando quaisquer informações que você achar relevantes.
 
-**Resposta**:  
+**Resposta**: Q:
+
+```sql
+INSERT INTO escritorios(escritorio_id,escritorio_nome,endereco,cep,cidade,estado_provincia,pais_id) VALUES (2000,"Estúdio de Inovação",'Senac Lapa Tito','05051-000','São Paulo','São Paulo','BR');
+
+INSERT INTO departamentos(departamento_id,departamento_nome,escritorio_id) VALUES (14,'Inovação',2000);
+```
 
 ---
 
 * O departamento de Inovações está sem funcionários. Inclua alguns colegas de turma nesse departamento.
   
-**Resposta**:  
+**Resposta**: Q:
+
+```sql
+INSERT INTO funcionarios(funcionario_id,primeiro_nome,sobrenome,email,senha,telefone,data_contratacao,cargo_id,salario,gerente_id,departamento_id) VALUES (209,'Vinicius','Cezario','vinascez@gmail.com','starwars20#@','5421-4455','2024-10-31',20,12000.00,NULL,14);
+INSERT INTO funcionarios(funcionario_id,primeiro_nome,sobrenome,email,senha,telefone,data_contratacao,cargo_id,salario,gerente_id,departamento_id) VALUES (210,'Gustavo','Gabriel','gugabriel@gmail.com','gatoflamingo55$','5428-1475','2024-10-31',20,12000.00,NULL,14);
+INSERT INTO funcionarios(funcionario_id,primeiro_nome,sobrenome,email,senha,telefone,data_contratacao,cargo_id,salario,gerente_id,departamento_id) VALUES (211,'Elton','Santos','eltonsantos@gmail.com','nba10#','1421-7432','2024-10-31',20,12000.00,NULL,14);
+```
 
 ---
 
