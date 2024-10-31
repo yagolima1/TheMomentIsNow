@@ -47,7 +47,12 @@ SELECT COUNT(*) FROM momento.funcionarios WHERE departamento_id = 8;
 ### Salários no Departamento de Vendas
 
 ### 5) Qual é o custo total dos salários do pessoal de Vendas? Isso nos ajuda a entender o orçamento do departamento!
-**Resposta**:  
+**Resposta**: O pessoal de Vendas tem um custo total de seus salários de: **51500.00**
+
+Q:
+```sql
+SELECT SUM(salario) FROM momento.funcionarios WHERE departamento_id = 8;
+```
 
 ---
 
