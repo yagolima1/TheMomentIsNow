@@ -57,7 +57,12 @@ SELECT SUM(salario) FROM momento.funcionarios WHERE departamento_id = 8;
 ---
 
 ### 6) Quanto o departamento de Vendas gasta em salários?
-**Resposta**:  
+**Resposta**: Eles gastam **51500.00**
+
+Q:
+```sql
+SELECT SUM(salario) FROM momento.funcionarios WHERE departamento_id = 8;
+```
 
 ---
 
