@@ -28,7 +28,12 @@ SELECT COUNT(*) FROM momento.funcionarios;
 ---
 
 ### 4. Quantos funcionários trabalham no Departamento de Tecnologia?
-**Resposta**:  
+**Resposta**: 6 Funcionários trabalham no Departamento de Tecnologia
+
+Q:
+```sql
+SELECT COUNT(*) FROM momento.funcionarios WHERE departamento_id = 6;
+```
 
 ---
 
