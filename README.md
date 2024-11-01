@@ -232,12 +232,26 @@ ORDER BY quantidade DESC;
 ---
 
 ### 19) Qual o produto mais vendido da empresa?
-**Resposta**:  
+**Resposta**: É o Uniforme do Superman, com 167 unidades vendidas.
+
+Q:
+```sql
+SELECT produto_nome, quantidade FROM momento.vendas
+INNER JOIN produtos ON produtos.produto_id = vendas.produto_id
+ORDER BY quantidade DESC;
+```
 
 ---
 
 ### 20) Qual o produto menos vendido da empresa?
-**Resposta**:  
+**Resposta**: São os Batarangues Oficiais, com apenas 3 unidades vendidas.
+
+Q:
+```sql
+SELECT produto_nome, quantidade FROM momento.vendas
+INNER JOIN produtos ON produtos.produto_id = vendas.produto_id
+ORDER BY quantidade;
+```
 
 ---
 
