@@ -47,7 +47,7 @@ SELECT COUNT(*) FROM momento.funcionarios WHERE departamento_id = 8;
 ### Salários no Departamento de Vendas
 
 ### 5) Qual é o custo total dos salários do pessoal de Vendas? Isso nos ajuda a entender o orçamento do departamento!
-**Resposta**: O pessoal de Vendas tem um custo total de seus salários de: **51500.00**
+**Resposta**: O pessoal de Vendas tem um custo total de seus salários de: **R$51.500,00**.
 
 Q:
 ```sql
@@ -57,7 +57,7 @@ SELECT SUM(salario) FROM momento.funcionarios WHERE departamento_id = 8;
 ---
 
 ### 6) Quanto o departamento de Vendas gasta em salários?
-**Resposta**: Eles gastam **51500.00**
+**Resposta**: Eles gastam **R$51.500,00**.
 
 Q:
 ```sql
@@ -79,7 +79,7 @@ ORDER BY quantidade DESC;
 ---
 
 ### 8) Qual é o produto mais caro no inventário da empresa?
-**Resposta**: É o Sabre de Luz do Mace Windu, custando R$990,29
+**Resposta**: É o Sabre de Luz do Mace Windu, custando **R$990,29**.
 
 Q:
 ```sql
@@ -159,7 +159,7 @@ SELECT CONCAT(primeiro_nome, " ", sobrenome) AS nome_funcionario, data_contratac
 
 ---
 
-### 13) Como a média salarial dos funcionários da "Momento" evoluiu nos últimos anos? Dica: utilize a função AVG() para calcular a média salarial dos funcionários. e GROUP BY para agrupar os resultados por ano.
+### 13) Como a média salarial dos funcionários da "Momento" evoluiu nos últimos anos? Dica: utilize a função `AVG()` para calcular a média salarial dos funcionários. e `GROUP BY` para agrupar os resultados por ano.
 **Resposta**: A média salarial dos funcionários durante os anos foi bem inconstânte, variando bastante os números, com resultados altos e baixos.
 
 Q:
@@ -172,7 +172,7 @@ SELECT AVG(salario) AS Media_Salarial, YEAR(data_contratacao) AS Ano FROM funcio
 ## Médias Salariais
 
 ### 14) Qual a média salarial dos funcionários da empresa Momento, excluindo-se o CEO, CMO e CFO?
-**Resposta**: A média salarial dos funcionários excluindo CEO, CMO e CFO é de 8496.666667.
+**Resposta**: A média salarial dos funcionários excluindo CEO, CMO e CFO é de **R$8.496,67**.
 
 Q:
 ```sql
@@ -182,7 +182,7 @@ SELECT AVG(salario) AS Media_Salarial FROM funcionarios WHERE cargo_id NOT IN (4
 ---
 
 ### 15) Qual a média salarial do departamento de tecnologia?
-**Resposta**: A média salarial desse departamento é de 4805.000000
+**Resposta**: A média salarial desse departamento é de **R$4.805,00**.
 
 Q:
 ```sql
@@ -192,7 +192,7 @@ SELECT AVG(salario) AS Media_Salarial FROM funcionarios WHERE departamento_id = 
 ---
 
 ### 16) Qual o departamento com a maior média salarial?
-**Resposta**: É o Departamento de Tecnologias Avançadas, com 21815.000000
+**Resposta**: É o Departamento de Tecnologias Avançadas, com **R$21.815,00**.
 
 Q:
 ```sql
@@ -271,10 +271,29 @@ ORDER BY COUNT(*) DESC;
 ---
 
 ### 22) Qual é o custo total de suprimentos em cada escritório? Que tal ordenar os resultados para ver qual escritório possui os suprimentos mais caros?
-**Resposta**:  
+**Resposta**: Umbrella Corp: **R$405.000,00** |
+<br>
+Baxter Building: **R$403.752,85** |
+<br>
+Wayne escritorios: **R$148.000,00** |
+<br>
+Shuri's Palace: **R$5.505,70** |
+<br>
+Sala Winter: **R$5.050,07** |
+<br>
+House of Mystery escritorios: **R$4.000,00** |
+<br>
+Arkham Base: **R$2.000,00**
+
+Q:
+```sql
+SELECT escritorios.escritorio_nome, SUM(custo) FROM momento.suprimentos
+INNER JOIN escritorios ON escritorios.escritorio_id = suprimentos.escritorio_id
+GROUP BY escritorio_nome
+ORDER BY SUM(custo) DESC;
+```
 
 ---
-
 
 ## Como Executar
 1. Clone este repositório.
