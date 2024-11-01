@@ -205,7 +205,15 @@ ORDER BY Media_Salarial DESC;
 ---
 
 ### 17) Qual o departamento com o menor número de funcionários?
-**Resposta**:  
+**Resposta**: São os Departamentos de Administração, Recursos Humanos, Relações Públicas, Contabilidade e Biotecnologia, todos com 1 funcionários cada.
+
+Q:
+```sql
+SELECT funcionarios.departamento_id, departamentos.departamento_nome, COUNT(*) FROM momento.funcionarios 
+INNER JOIN departamentos ON departamentos.departamento_id = funcionarios.departamento_id
+GROUP BY departamento_id
+ORDER BY COUNT(*);
+```
 
 ---
 
