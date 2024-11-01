@@ -258,7 +258,15 @@ ORDER BY quantidade;
 ## Escritórios
 
 ### 21) Quantos escritórios a "Momento" possui em cada região? (Dica: relacione as tabelas regioes e escritorios).
-**Resposta**:  
+**Resposta**: A Momento possui 3 Escritórios no Reino Unido, 3 nos Estados Unidos e 1 Escritório no Brasil, Canadá, Alemanha e em Wakanda.
+
+Q:
+```sql
+SELECT paises.pais_nome, escritorios.pais_id, COUNT(*) FROM momento.escritorios
+INNER JOIN paises ON paises.pais_id = escritorios.pais_id
+GROUP BY pais_id
+ORDER BY COUNT(*) DESC;
+```
 
 ---
 
@@ -270,7 +278,7 @@ ORDER BY quantidade;
 
 ## Como Executar
 1. Clone este repositório.
-2. Importe o arquivo JSON no MongoDB.
+2. Importe o arquivo JSON no MySQL.
 3. Execute as consultas para responder às perguntas.
 
 ## Tecnologias Utilizadas
