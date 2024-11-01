@@ -160,14 +160,24 @@ SELECT CONCAT(primeiro_nome, " ", sobrenome) AS nome_funcionario, data_contratac
 ---
 
 ### 13) Como a média salarial dos funcionários da "Momento" evoluiu nos últimos anos? Dica: utilize a função AVG() para calcular a média salarial dos funcionários. e GROUP BY para agrupar os resultados por ano.
-**Resposta**:  
+**Resposta**: A média salarial dos funcionários durante os anos foi bem inconstânte, variando bastante os números, com resultados altos e baixos.
+
+Q:
+```sql
+SELECT AVG(salario) AS Média_Salarial, YEAR(data_contratacao) AS Ano FROM funcionarios GROUP BY data_contratacao ORDER BY YEAR(data_contratacao);
+```
 
 ---
 
 ## Médias Salariais
 
 ### 14) Qual a média salarial dos funcionários da empresa Momento, excluindo-se o CEO, CMO e CFO?
-**Resposta**:  
+**Resposta**: A média salarial dos funcionários excluindo CEO, CMO e CFO é de 8496.666667
+
+Q:
+```sql
+SELECT AVG(salario) AS Média_Salarial FROM funcionarios WHERE cargo_id NOT IN (4,7,10);
+```
 
 ---
 
