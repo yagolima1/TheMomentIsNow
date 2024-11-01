@@ -199,7 +199,7 @@ Q:
 SELECT funcionarios.departamento_id, departamentos.departamento_nome, AVG(salario) AS Media_Salarial FROM funcionarios
 INNER JOIN departamentos ON departamentos.departamento_id = funcionarios.departamento_id
 GROUP BY departamento_id 
-ORDER BY Media_Salarial DESC
+ORDER BY Media_Salarial DESC;
 ```
 
 ---
