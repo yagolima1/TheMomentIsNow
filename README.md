@@ -220,7 +220,14 @@ ORDER BY COUNT(*);
 ## Produtos
 
 ### 18) Pensando na relação quantidade e valor unitario, qual o produto mais valioso da empresa?
-**Resposta**:  
+**Resposta**: É o Uniforme do Superman.
+
+Q:
+```sql
+SELECT produto_nome, produto_price, quantidade FROM momento.vendas
+INNER JOIN produtos ON produtos.produto_id = vendas.produto_id
+ORDER BY quantidade DESC;
+```
 
 ---
 
