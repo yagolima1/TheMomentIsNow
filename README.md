@@ -164,7 +164,7 @@ SELECT CONCAT(primeiro_nome, " ", sobrenome) AS nome_funcionario, data_contratac
 
 Q:
 ```sql
-SELECT AVG(salario) AS Média_Salarial, YEAR(data_contratacao) AS Ano FROM funcionarios GROUP BY data_contratacao ORDER BY YEAR(data_contratacao);
+SELECT AVG(salario) AS Media_Salarial, YEAR(data_contratacao) AS Ano FROM funcionarios GROUP BY data_contratacao ORDER BY YEAR(data_contratacao);
 ```
 
 ---
@@ -176,7 +176,7 @@ SELECT AVG(salario) AS Média_Salarial, YEAR(data_contratacao) AS Ano FROM funci
 
 Q:
 ```sql
-SELECT AVG(salario) AS Média_Salarial FROM funcionarios WHERE cargo_id NOT IN (4,7,10);
+SELECT AVG(salario) AS Media_Salarial FROM funcionarios WHERE cargo_id NOT IN (4,7,10);
 ```
 
 ---
@@ -186,13 +186,21 @@ SELECT AVG(salario) AS Média_Salarial FROM funcionarios WHERE cargo_id NOT IN (
 
 Q:
 ```sql
-SELECT AVG(salario) AS Média_Salarial FROM funcionarios WHERE departamento_id = 6;
+SELECT AVG(salario) AS Media_Salarial FROM funcionarios WHERE departamento_id = 6;
 ```
 
 ---
 
 ### 16) Qual o departamento com a maior média salarial?
-**Resposta**:  
+**Resposta**: É o Departamento de Tecnologias Avançadas, com 21815.000000
+
+Q:
+```sql
+SELECT funcionarios.departamento_id, departamentos.departamento_nome, AVG(salario) AS Media_Salarial FROM funcionarios
+INNER JOIN departamentos ON departamentos.departamento_id = funcionarios.departamento_id
+GROUP BY departamento_id 
+ORDER BY Media_Salarial DESC
+```
 
 ---
 
